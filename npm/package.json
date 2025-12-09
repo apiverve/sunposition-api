@@ -1,0 +1,35 @@
+{
+  "name": "@apiverve/sunposition",
+  "version": "1.1.12",
+  "description": "Sun Position is a simple tool for getting sun position data. It returns data such as altitude, azimuth, and distance of the sun from the location provided.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "mocha",
+    "example": "node examples/basic.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apiverve/sunposition-api.git",
+    "directory": "npm"
+  },
+  "keywords": [
+    "sun position", "sun position api", "sun position tool", "sun position software", "sun position service"
+  ],
+  "author": "APIVerve <hello@apiverve.com> (http://apiverve.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apiverve/sunposition-api/issues"
+  },
+  "homepage": "https://apiverve.com/marketplace/sunposition?utm_source=npm",
+  "devDependencies": {
+    "mocha": "^11.0.1",
+    "chai": "^5.1.2",
+    "dotenv": "^16.4.7"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "promise": "^8.3.0",
+    "axios": "1.13.2"
+  }
+}
