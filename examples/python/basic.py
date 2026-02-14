@@ -17,14 +17,11 @@ def call_sunposition_api():
     Make a GET request to the Sun Position API
     """
     try:
-        # Query parameters
-        params &#x3D; {&#x27;lat&#x27;: 37.7749, &#x27;lon&#x27;: -122.4194, &#x27;date&#x27;: &#x27;12-02-2025&#x27;}
-
         headers = {
             'x-api-key': API_KEY
         }
 
-        response = requests.get(API_URL, headers=headers, params=params)
+        response = requests.get(API_URL, headers=headers)
 
         # Raise exception for HTTP errors
         response.raise_for_status()
