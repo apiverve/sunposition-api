@@ -17,7 +17,7 @@ const api = new sunpositionAPI({
 var query = {
   lat: 37.7749,
   lon: -122.4194,
-  date: "12-02-2025"
+  date: "Today"
 };
 
 // Make the API request using callback
