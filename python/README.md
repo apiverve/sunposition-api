@@ -44,7 +44,11 @@ from apiverve_sunposition.apiClient import SunpositionAPIClient
 # Initialize the client with your APIVerve API key
 api = SunpositionAPIClient("[YOUR_API_KEY]")
 
-query = { "lat": 37.7749, "lon": -122.4194, "date": "Today" }
+query = {
+    "lat": 37.7749,
+    "lon": -122.4194,
+    "date": "Today"
+}
 
 try:
     # Make the API call
@@ -82,7 +86,11 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "lat": 37.7749, "lon": -122.4194, "date": "Today" }
+query = {
+    "lat": 37.7749,
+    "lon": -122.4194,
+    "date": "Today"
+}
 ```
 
 ###### Simple Request
@@ -128,7 +136,11 @@ from apiverve_sunposition.apiClient import SunpositionAPIClient, SunpositionAPIC
 
 api = SunpositionAPIClient("[YOUR_API_KEY]")
 
-query = { "lat": 37.7749, "lon": -122.4194, "date": "Today" }
+query = {
+    "lat": 37.7749,
+    "lon": -122.4194,
+    "date": "Today"
+}
 
 try:
     result = api.execute(query)
@@ -149,7 +161,11 @@ from apiverve_sunposition.apiClient import SunpositionAPIClient, SunpositionAPIC
 
 api = SunpositionAPIClient("[YOUR_API_KEY]")
 
-query = { "lat": 37.7749, "lon": -122.4194, "date": "Today" }
+query = {
+    "lat": 37.7749,
+    "lon": -122.4194,
+    "date": "Today"
+}
 
 try:
     result = api.execute(query)
@@ -183,7 +199,11 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_sunposition.apiClient import SunpositionAPIClient, SunpositionAPIClientError
 
-query = { "lat": 37.7749, "lon": -122.4194, "date": "Today" }
+query = {
+    "lat": 37.7749,
+    "lon": -122.4194,
+    "date": "Today"
+}
 
 # Using context manager ensures proper cleanup
 with SunpositionAPIClient("[YOUR_API_KEY]") as api:
@@ -209,7 +229,11 @@ from apiverve_sunposition.apiClient import SunpositionAPIClient
 # Enable debug mode
 api = SunpositionAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "lat": 37.7749, "lon": -122.4194, "date": "Today" }
+query = {
+    "lat": 37.7749,
+    "lon": -122.4194,
+    "date": "Today"
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -224,8 +248,13 @@ from apiverve_sunposition.apiClient import SunpositionAPIClient
 
 api = SunpositionAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "lat": 37.7749,
+    "lon": -122.4194,
+    "date": "Today"
+}
+
 try:
-    query = { "lat": 37.7749, "lon": -122.4194, "date": "Today" }
     result = api.execute(query)
     print(result)
 finally:
