@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/sunposition",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Sun Position is a simple tool for getting sun position data. It returns data such as altitude, azimuth, and distance of the sun from the location provided.",
   "main": "index.js",
   "types": "index.d.ts",
