@@ -30,7 +30,13 @@ The Sun Position API provides a simple, reliable way to integrate sun position f
 ```javascript
 async function callSunPositionAPI() {
     try {
-        const response = await fetch('https://api.apiverve.com/v1/sunposition', {
+        const params = new URLSearchParams({
+            lat: 37.7749,
+            lon: -122.4194,
+            time: '14:30'
+        });
+
+        const response = await fetch(`https://api.apiverve.com/v1/sunposition?${params}`, {
             method: 'GET',
             headers: {
                 'x-api-key': 'YOUR_API_KEY_HERE'
@@ -50,7 +56,7 @@ callSunPositionAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/sunposition?param=value" \
+curl -X GET "https://api.apiverve.com/v1/sunposition?lat=37.7749&lon=-122.4194&time=14%3A30" \
   -H "x-api-key: YOUR_API_KEY_HERE"
 ```
 
@@ -150,7 +156,7 @@ go get github.com/apiverve/sunposition-api/go
 |---------|---------|
 | **Multi-language SDKs** | Native packages for JavaScript, Python, C#, Go, and Android |
 | **Simple Integration** | Single API key authentication, consistent response format |
-| **Production Ready** | 99.9% uptime, fast response times, used by thousands of developers |
+| **Production Ready** | 99.9% uptime SLA, served from 24 global regions |
 | **Comprehensive Docs** | Full examples, OpenAPI spec, and dedicated support |
 
 ---
@@ -169,7 +175,7 @@ go get github.com/apiverve/sunposition-api/go
 The Sun Position API is commonly used for:
 
 - **Web Applications** - Add sun position features to your frontend or backend
-- **Mobile Apps** - Native SDKs for iOS and Android development
+- **Mobile Apps** - Native SDKs for Android development
 - **Automation** - Integrate with n8n, Zapier, or custom workflows
 - **SaaS Products** - Enhance your product with sun position capabilities
 - **Data Pipelines** - Process and analyze data at scale
