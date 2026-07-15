@@ -4,28 +4,41 @@ declare module '@apiverve/sunposition' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface sunpositionResponse {
     status: string;
     error: string | null;
     data: SunPositionData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface SunPositionData {
-      date:        string;
+      date:        null | string;
+      time:        null | string;
       coordinates: Coordinates;
       sun:         Sun;
   }
   
   interface Coordinates {
-      latitude:  number;
-      longitude: number;
+      latitude:  number | null;
+      longitude: number | null;
   }
   
   interface Sun {
-      altitude: number;
-      azimuth:  number;
+      altitude: number | null;
+      azimuth:  number | null;
   }
 
   export default class sunpositionWrapper {
