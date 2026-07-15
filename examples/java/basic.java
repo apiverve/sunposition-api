@@ -12,8 +12,14 @@ public class BasicExample {
         SunPositionAPIClient client = new SunPositionAPIClient("YOUR_API_KEY_HERE");
 
         try {
-            // Execute the API request (no parameters required)
-            APIResponse response = client.execute(null);
+            // Query parameters
+            Map&lt;String, Object&gt; parameters &#x3D; new HashMap&lt;&gt;();
+        parameters.put(&quot;lat&quot;, 37.7749);
+        parameters.put(&quot;lon&quot;, -122.4194);
+        parameters.put(&quot;time&quot;, &quot;14:30&quot;);
+
+            // Execute the API request
+            APIResponse response = client.execute(parameters);
 
             // Check if the request was successful
             if (response.isSuccess()) {
