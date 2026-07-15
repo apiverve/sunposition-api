@@ -13,7 +13,14 @@ const API_URL = 'https://api.apiverve.com/v1/sunposition';
  */
 async function callSunPositionAPI() {
   try {
-    const response = await fetch(API_URL, {
+    // Query parameters
+    const params &#x3D; new URLSearchParams({
+            lat: 37.7749,
+            lon: -122.4194,
+            time: &#x27;14:30&#x27;
+        });
+
+    const response = await fetch(`${API_URL}?${params}`, {
       method: 'GET',
       headers: {
         'x-api-key': API_KEY
