@@ -25,12 +25,18 @@ namespace APIVerve.API.SunPosition
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
     {
         [JsonProperty("date")]
         public string Date { get; set; }
+
+        [JsonProperty("time")]
+        public string Time { get; set; }
 
         [JsonProperty("coordinates")]
         public Coordinates Coordinates { get; set; }
@@ -42,18 +48,30 @@ namespace APIVerve.API.SunPosition
     public partial class Coordinates
     {
         [JsonProperty("latitude")]
-        public double Latitude { get; set; }
+        public double? Latitude { get; set; }
 
         [JsonProperty("longitude")]
-        public double Longitude { get; set; }
+        public double? Longitude { get; set; }
     }
 
     public partial class Sun
     {
         [JsonProperty("altitude")]
-        public double Altitude { get; set; }
+        public double? Altitude { get; set; }
 
         [JsonProperty("azimuth")]
-        public double Azimuth { get; set; }
+        public double? Azimuth { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
