@@ -18,7 +18,8 @@ var query = {
   lat: 37.7749,
   lon: -122.4194,
   date: "01-16-2026",
-  time: "14:30"
+  time: "14:30",
+  timezone: "America/Los_Angeles"
 };
 
 // Make the API request using callback

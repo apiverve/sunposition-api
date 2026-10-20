@@ -1,13 +1,10 @@
 # Sun Position API
 
-Sun Position is a simple tool for getting sun position data. It returns data such as altitude, azimuth, and distance of the sun from the location provided.
+Sun Position calculates the sun altitude and azimuth, plus compass bearing, for any geographic coordinates and time. Provide latitude and longitude to read sun elevation angles and daylight status; paid plans add panel aiming angles and shadow ratios.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 [![npm version](https://img.shields.io/npm/v/@apiverve/sunposition.svg)](https://www.npmjs.com/package/@apiverve/sunposition)
 
-This is a Javascript Wrapper for the [Sun Position API](https://sunposition.apiverve.com?utm_source=npm&utm_medium=readme)
+This is a JavaScript wrapper for the [Sun Position API](https://apiverve.com/marketplace/sunposition?utm_source=npm&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -28,15 +25,15 @@ yarn add @apiverve/sunposition
 ## Configuration
 
 Before using the Sun Position API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=npm&utm_medium=readme)
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=npm&utm_medium=referral&utm_content=readme)
 
 ---
 
 ## Quick Start
 
-[Get started with the Quick Start Guide](https://docs.apiverve.com/quickstart?utm_source=npm&utm_medium=readme)
+[Get started with the Quick Start Guide](https://docs.apiverve.com/quickstart?utm_source=npm&utm_medium=referral&utm_content=readme)
 
-The Sun Position API documentation is found here: [https://docs.apiverve.com/ref/sunposition](https://docs.apiverve.com/ref/sunposition?utm_source=npm&utm_medium=readme).
+The Sun Position API documentation is found here: [https://docs.apiverve.com/ref/sunposition](https://docs.apiverve.com/ref/sunposition?utm_source=npm&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -63,7 +60,8 @@ var query = {
   lat: 37.7749,
   lon: -122.4194,
   date: "01-16-2026",
-  time: "14:30"
+  time: "14:30",
+  timezone: "America/Los_Angeles"
 };
 
 api.execute(query, function (error, data) {
@@ -86,7 +84,8 @@ var query = {
   lat: 37.7749,
   lon: -122.4194,
   date: "01-16-2026",
-  time: "14:30"
+  time: "14:30",
+  timezone: "America/Los_Angeles"
 };
 
 api.execute(query)
@@ -110,7 +109,8 @@ async function makeRequest() {
   lat: 37.7749,
   lon: -122.4194,
   date: "01-16-2026",
-  time: "14:30"
+  time: "14:30",
+  timezone: "America/Los_Angeles"
 };
 
     try {
@@ -131,15 +131,36 @@ async function makeRequest() {
   "status": "ok",
   "error": null,
   "data": {
-    "date": "01-22-2026",
+    "date": "01-16-2026",
     "time": "14:30",
+    "timezone": "America/Los_Angeles",
+    "timestampUTC": "2026-01-16T22:30:00.000Z",
     "coordinates": {
       "latitude": 37.7749,
       "longitude": -122.4194
     },
     "sun": {
-      "altitude": 0.13571365568367633,
-      "azimuth": 0.9137156885643708
+      "altitude": 0.41616137328975444,
+      "azimuth": 0.5817558808515568,
+      "altitudeDegrees": 23.844,
+      "azimuthDegrees": 33.332,
+      "compassBearing": 213.332,
+      "isDaylight": true,
+      "declination": -20.7961,
+      "rightAscension": 19.9228,
+      "hourAngle": 2.174,
+      "distance": 0.983786
+    },
+    "equationOfTime": -9.88,
+    "airMass": 2.454,
+    "clearSky": {
+      "directNormal": 702.4,
+      "globalHorizontal": 284.9
+    },
+    "shadowRatio": 2.254,
+    "panelAim": {
+      "tilt": 66.07,
+      "azimuth": 213.44
     }
   }
 }
@@ -149,7 +170,7 @@ async function makeRequest() {
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=npm&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=npm&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -161,12 +182,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=npm&utm_medium=readme), [Privacy Policy](https://apiverve.com/privacy?utm_source=npm&utm_medium=readme), and [Refund Policy](https://apiverve.com/refund?utm_source=npm&utm_medium=readme).
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=npm&utm_medium=referral&utm_content=readme) and [Privacy Policy](https://apiverve.com/privacy?utm_source=npm&utm_medium=referral&utm_content=readme).
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 

@@ -25,10 +25,22 @@ declare module '@apiverve/sunposition' {
 
 
   interface SunPositionData {
-      date:        null | string;
-      time:        null | string;
-      coordinates: Coordinates;
-      sun:         Sun;
+      date:           null | string;
+      time:           null | string;
+      timezone:       null | string;
+      timestampUTC:   Date | null;
+      coordinates:    Coordinates;
+      sun:            Sun;
+      equationOfTime: number | null;
+      airMass:        number | null;
+      clearSky:       ClearSky;
+      shadowRatio:    number | null;
+      panelAim:       PanelAim;
+  }
+  
+  interface ClearSky {
+      directNormal:     number | null;
+      globalHorizontal: number | null;
   }
   
   interface Coordinates {
@@ -36,9 +48,22 @@ declare module '@apiverve/sunposition' {
       longitude: number | null;
   }
   
+  interface PanelAim {
+      tilt:    number | null;
+      azimuth: number | null;
+  }
+  
   interface Sun {
-      altitude: number | null;
-      azimuth:  number | null;
+      altitude:        number | null;
+      azimuth:         number | null;
+      altitudeDegrees: number | null;
+      azimuthDegrees:  number | null;
+      compassBearing:  number | null;
+      isDaylight:      boolean | null;
+      declination:     number | null;
+      rightAscension:  number | null;
+      hourAngle:       number | null;
+      distance:        number | null;
   }
 
   export default class sunpositionWrapper {
