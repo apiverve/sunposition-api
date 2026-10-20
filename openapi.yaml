@@ -2,9 +2,10 @@ openapi: 3.0.4
 info:
   title: Sun Position
   description: >-
-    Sun Position is a simple tool for getting sun position data. It returns data
-    such as altitude, azimuth, and distance of the sun from the location
-    provided.
+    Sun Position calculates the sun altitude and azimuth, plus compass bearing,
+    for any geographic coordinates and time. Provide latitude and longitude to
+    read sun elevation angles and daylight status; paid plans add panel aiming
+    angles and shadow ratios.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -19,7 +20,7 @@ servers:
 paths:
   /v1/sunposition:
     get:
-      summary: Get Sun Position Data
+      summary: Sun Position
       description: Get sun position data based on the location
       operationId: sunposition
       parameters:
@@ -50,9 +51,18 @@ paths:
             type: string
           required: false
           description: >-
-            The time of day for the calculation (HH:mm format, 24-hour).
-            Defaults to 00:00 if not provided
+            The time of day for the calculation (HH:mm format, 24-hour), read in
+            the timezone of the coordinates. Defaults to 00:00 if not provided
           example: '14:30'
+        - name: timezone
+          in: query
+          schema:
+            type: string
+          required: false
+          description: >-
+            IANA timezone to read the date and time in, such as
+            America/Los_Angeles. Defaults to the timezone of the coordinates
+          example: America/Los_Angeles
       responses:
         '200':
           description: Successful Response
@@ -74,14 +84,33 @@ paths:
                 status: ok
                 error: null
                 data:
-                  date: 01-22-2026
+                  date: 01-16-2026
                   time: '14:30'
+                  timezone: America/Los_Angeles
+                  timestampUTC: '2026-01-16T22:30:00.000Z'
                   coordinates:
                     latitude: 37.7749
                     longitude: -122.4194
                   sun:
-                    altitude: 0.13571365568367633
-                    azimuth: 0.9137156885643708
+                    altitude: 0.41616137328975444
+                    azimuth: 0.5817558808515568
+                    altitudeDegrees: 23.844
+                    azimuthDegrees: 33.332
+                    compassBearing: 213.332
+                    isDaylight: true
+                    declination: -20.7961
+                    rightAscension: 19.9228
+                    hourAngle: 2.174
+                    distance: 0.983786
+                  equationOfTime: -9.88
+                  airMass: 2.454
+                  clearSky:
+                    directNormal: 702.4
+                    globalHorizontal: 284.9
+                  shadowRatio: 2.254
+                  panelAim:
+                    tilt: 66.07
+                    azimuth: 213.44
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':

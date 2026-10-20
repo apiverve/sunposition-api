@@ -18,7 +18,7 @@ def call_sunposition_api():
     """
     try:
         # Query parameters
-        params &#x3D; {&#x27;lat&#x27;: 37.7749, &#x27;lon&#x27;: -122.4194, &#x27;time&#x27;: &#x27;14:30&#x27;}
+        params &#x3D; {&#x27;lat&#x27;: 37.7749, &#x27;lon&#x27;: -122.4194, &#x27;time&#x27;: &#x27;14:30&#x27;, &#x27;timezone&#x27;: &#x27;America/Los_Angeles&#x27;}
 
         headers = {
             'x-api-key': API_KEY

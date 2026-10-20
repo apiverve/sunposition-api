@@ -17,6 +17,7 @@ public class BasicExample {
         parameters.put(&quot;lat&quot;, 37.7749);
         parameters.put(&quot;lon&quot;, -122.4194);
         parameters.put(&quot;time&quot;, &quot;14:30&quot;);
+        parameters.put(&quot;timezone&quot;, &quot;America/Los_Angeles&quot;);
 
             // Execute the API request
             APIResponse response = client.execute(parameters);

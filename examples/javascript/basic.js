@@ -17,7 +17,8 @@ async function callSunPositionAPI() {
     const params &#x3D; new URLSearchParams({
             lat: 37.7749,
             lon: -122.4194,
-            time: &#x27;14:30&#x27;
+            time: &#x27;14:30&#x27;,
+            timezone: &#x27;America/Los_Angeles&#x27;
         });
 
     const response = await fetch(`${API_URL}?${params}`, {

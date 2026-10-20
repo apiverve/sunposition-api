@@ -1,13 +1,13 @@
-# [Sun Position API](https://sunposition.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Sun Position API](https://apiverve.com/marketplace/sunposition?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Sun Position is a simple tool for getting sun position data. It returns data such as altitude, azimuth, and distance of the sun from the location provided.
+Sun Position calculates the sun altitude and azimuth, plus compass bearing, for any geographic coordinates and time. Provide latitude and longitude to read sun elevation angles and daylight status; paid plans add panel aiming angles and shadow ratios.
 
 The Sun Position API provides a simple, reliable way to integrate sun position functionality into your applications. Built for developers who need production-ready sun position capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://sunposition.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/sunposition?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://sunposition.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/sunposition?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -33,7 +33,8 @@ async function callSunPositionAPI() {
         const params = new URLSearchParams({
             lat: 37.7749,
             lon: -122.4194,
-            time: '14:30'
+            time: '14:30',
+            timezone: 'America/Los_Angeles'
         });
 
         const response = await fetch(`https://api.apiverve.com/v1/sunposition?${params}`, {
@@ -56,7 +57,7 @@ callSunPositionAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/sunposition?lat=37.7749&lon=-122.4194&time=14%3A30" \
+curl -X GET "https://api.apiverve.com/v1/sunposition?lat=37.7749&lon=-122.4194&time=14%3A30&timezone=America%2FLos_Angeles" \
   -H "x-api-key: YOUR_API_KEY_HERE"
 ```
 
@@ -163,7 +164,7 @@ go get github.com/apiverve/sunposition-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [Sun Position API](https://sunposition.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Sun Position API](https://apiverve.com/marketplace/sunposition?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/sunposition](https://docs.apiverve.com/ref/sunposition)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -193,11 +194,58 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Sun Position API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "date": "01-16-2026",
+    "time": "14:30",
+    "timezone": "America/Los_Angeles",
+    "timestampUTC": "2026-01-16T22:30:00.000Z",
+    "coordinates": {
+      "latitude": 37.7749,
+      "longitude": -122.4194
+    },
+    "sun": {
+      "altitude": 0.41616137328975444,
+      "azimuth": 0.5817558808515568,
+      "altitudeDegrees": 23.844,
+      "azimuthDegrees": 33.332,
+      "compassBearing": 213.332,
+      "isDaylight": true,
+      "declination": -20.7961,
+      "rightAscension": 19.9228,
+      "hourAngle": 2.174,
+      "distance": 0.983786
+    },
+    "equationOfTime": -9.88,
+    "airMass": 2.454,
+    "clearSky": {
+      "directNormal": 702.4,
+      "globalHorizontal": 284.9
+    },
+    "shadowRatio": 2.254,
+    "panelAim": {
+      "tilt": 66.07,
+      "azimuth": 213.44
+    }
+  }
 }
 ```
 
@@ -205,7 +253,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Sun Position API](https://sunposition.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Sun Position API](https://apiverve.com/marketplace/sunposition?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)
