@@ -2,17 +2,17 @@ from setuptools import setup, find_packages
 
 setup(
     name='apiverve_sunposition',
-    version='1.1.14',
+    version='1.2.2',
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
         'requests',
         'setuptools'
     ],
-    description='Sun Position is a simple tool for getting sun position data. It returns data such as altitude, azimuth, and distance of the sun from the location provided.',
+    description='Sun Position calculates the sun altitude and azimuth, plus compass bearing, for any geographic coordinates and time. Provide latitude and longitude to read sun elevation angles and daylight status; paid plans add panel aiming angles and shadow ratios.',
     author='APIVerve',
     author_email='hello@apiverve.com',
-    url='https://sunposition.apiverve.com?utm_source=pypi&utm_medium=homepage',
+    url='https://apiverve.com/marketplace/sunposition?utm_source=pypi&utm_medium=referral&utm_content=homepage',
     classifiers=[
         'Programming Language :: Python :: 3',
         'Operating System :: OS Independent',

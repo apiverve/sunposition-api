@@ -1,6 +1,6 @@
 import re
-from typing import Dict, Optional, Any
-from dataclasses import dataclass, List
+from typing import Dict, Optional, Any, List
+from dataclasses import dataclass
 import requests
 
 
@@ -26,7 +26,9 @@ class SunpositionAPIClient:
     VALIDATION_RULES = {
         "lat": {"type": "number", "required": True, "min": -90, "max": 90},
         "lon": {"type": "number", "required": True, "min": -180, "max": 180},
-        "date": {"type": "string", "required": False, "format": "date", "default": "Today"}
+        "date": {"type": "string", "required": False, "format": "date"},
+        "time": {"type": "string", "required": False, "format": "time"},
+        "timezone": {"type": "string", "required": False, "format": "timezone"}
     }
 
     # Format validation patterns
