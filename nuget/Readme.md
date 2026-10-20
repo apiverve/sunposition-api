@@ -1,13 +1,12 @@
-SunPosition API
+Sun Position API
 ============
 
-Sun Position is a simple tool for getting sun position data. It returns data such as altitude, azimuth, and distance of the sun from the location provided.
+Sun Position calculates the sun altitude and azimuth, plus compass bearing, for any geographic coordinates and time. Provide latitude and longitude to read sun elevation angles and daylight status; paid plans add panel aiming angles and shadow ratios.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a .NET Wrapper for the [SunPosition API](https://sunposition.apiverve.com?utm_source=nuget&utm_medium=readme)
+[![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.SunPosition.svg)](https://www.nuget.org/packages/APIVerve.API.SunPosition)
+
+This is a .NET wrapper for the [Sun Position API](https://apiverve.com/marketplace/sunposition?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -40,8 +39,8 @@ From within Visual Studio:
 
 ## Configuration
 
-Before using the sunposition API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=readme)
+Before using the Sun Position API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -61,11 +60,12 @@ class Program
         var apiClient = new SunPositionAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new SunPositionQueryOptions {
-    Lat = 37.7749,
-    Lon = -122.4194,
-    Date = "01-16-2026",
-    Time = "14:30"
-};
+            Lat = 37.7749,
+            Lon = -122.4194,
+            Date = "01-16-2026",
+            Time = "14:30",
+            Timezone = "America/Los_Angeles"
+        };
 
         // Make the API call
         try
@@ -95,13 +95,13 @@ class Program
 
 ## Usage
 
-The SunPosition API documentation is found here: [https://docs.apiverve.com/ref/sunposition](https://docs.apiverve.com/ref/sunposition?utm_source=nuget&utm_medium=readme).
+The Sun Position API documentation is found here: [https://docs.apiverve.com/ref/sunposition](https://docs.apiverve.com/ref/sunposition?utm_source=nuget&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
 
 ###### Authentication
-SunPosition API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
+Sun Position API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
 
 ```csharp
 // Create an instance of the API client
@@ -128,11 +128,12 @@ public class Example
         var apiClient = new SunPositionAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new SunPositionQueryOptions {
-    Lat = 37.7749,
-    Lon = -122.4194,
-    Date = "01-16-2026",
-    Time = "14:30"
-};
+            Lat = 37.7749,
+            Lon = -122.4194,
+            Date = "01-16-2026",
+            Time = "14:30",
+            Timezone = "America/Los_Angeles"
+        };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
 
@@ -163,11 +164,12 @@ public class Example
         var apiClient = new SunPositionAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new SunPositionQueryOptions {
-    Lat = 37.7749,
-    Lon = -122.4194,
-    Date = "01-16-2026",
-    Time = "14:30"
-};
+            Lat = 37.7749,
+            Lon = -122.4194,
+            Date = "01-16-2026",
+            Time = "14:30",
+            Timezone = "America/Los_Angeles"
+        };
 
         var response = apiClient.Execute(queryOptions);
 
@@ -203,11 +205,12 @@ public class Example
         var apiClient = new SunPositionAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new SunPositionQueryOptions {
-    Lat = 37.7749,
-    Lon = -122.4194,
-    Date = "01-16-2026",
-    Time = "14:30"
-};
+            Lat = 37.7749,
+            Lon = -122.4194,
+            Date = "01-16-2026",
+            Time = "14:30",
+            Timezone = "America/Los_Angeles"
+        };
 
         try
         {
@@ -262,11 +265,12 @@ public class Example
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
         var queryOptions = new SunPositionQueryOptions {
-    Lat = 37.7749,
-    Lon = -122.4194,
-    Date = "01-16-2026",
-    Time = "14:30"
-};
+            Lat = 37.7749,
+            Lon = -122.4194,
+            Date = "01-16-2026",
+            Time = "14:30",
+            Timezone = "America/Los_Angeles"
+        };
 
         try
         {
@@ -309,7 +313,8 @@ var queryOptions = new SunPositionQueryOptions {
     Lat = 37.7749,
     Lon = -122.4194,
     Date = "01-16-2026",
-    Time = "14:30"
+    Time = "14:30",
+    Timezone = "America/Los_Angeles"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -338,7 +343,8 @@ var queryOptions = new SunPositionQueryOptions {
     Lat = 37.7749,
     Lon = -122.4194,
     Date = "01-16-2026",
-    Time = "14:30"
+    Time = "14:30",
+    Timezone = "America/Los_Angeles"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -359,7 +365,8 @@ var queryOptions = new SunPositionQueryOptions {
     Lat = 37.7749,
     Lon = -122.4194,
     Date = "01-16-2026",
-    Time = "14:30"
+    Time = "14:30",
+    Timezone = "America/Los_Angeles"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -374,7 +381,8 @@ var queryOptions = new SunPositionQueryOptions {
     Lat = 37.7749,
     Lon = -122.4194,
     Date = "01-16-2026",
-    Time = "14:30"
+    Time = "14:30",
+    Timezone = "America/Los_Angeles"
 };
 
 using (var apiClient = new SunPositionAPIClient("[YOUR_API_KEY]"))
@@ -394,15 +402,36 @@ using (var apiClient = new SunPositionAPIClient("[YOUR_API_KEY]"))
   "status": "ok",
   "error": null,
   "data": {
-    "date": "01-22-2026",
+    "date": "01-16-2026",
     "time": "14:30",
+    "timezone": "America/Los_Angeles",
+    "timestampUTC": "2026-01-16T22:30:00.000Z",
     "coordinates": {
       "latitude": 37.7749,
       "longitude": -122.4194
     },
     "sun": {
-      "altitude": 0.13571365568367633,
-      "azimuth": 0.9137156885643708
+      "altitude": 0.41616137328975444,
+      "azimuth": 0.5817558808515568,
+      "altitudeDegrees": 23.844,
+      "azimuthDegrees": 33.332,
+      "compassBearing": 213.332,
+      "isDaylight": true,
+      "declination": -20.7961,
+      "rightAscension": 19.9228,
+      "hourAngle": 2.174,
+      "distance": 0.983786
+    },
+    "equationOfTime": -9.88,
+    "airMass": 2.454,
+    "clearSky": {
+      "directNormal": 702.4,
+      "globalHorizontal": 284.9
+    },
+    "shadowRatio": 2.254,
+    "panelAim": {
+      "tilt": 66.07,
+      "azimuth": 213.44
     }
   }
 }
@@ -412,7 +441,7 @@ using (var apiClient = new SunPositionAPIClient("[YOUR_API_KEY]"))
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -423,12 +452,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 

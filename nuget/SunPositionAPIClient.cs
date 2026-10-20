@@ -70,7 +70,8 @@ namespace APIVerve.API.SunPosition
             { "lat", new ValidationRule { Type = "number", Required = true, Min = -90, Max = 90 } },
             { "lon", new ValidationRule { Type = "number", Required = true, Min = -180, Max = 180 } },
             { "date", new ValidationRule { Type = "string", Required = false, Format = "date" } },
-            { "time", new ValidationRule { Type = "string", Required = false, Format = "time" } }
+            { "time", new ValidationRule { Type = "string", Required = false, Format = "time" } },
+            { "timezone", new ValidationRule { Type = "string", Required = false, Format = "timezone" } }
         };
 
         /// <summary>Format validation patterns</summary>

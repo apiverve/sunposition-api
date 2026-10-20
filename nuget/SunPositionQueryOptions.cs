@@ -29,9 +29,15 @@ namespace APIVerve.API.SunPosition
         public string Date { get; set; }
 
         /// <summary>
-        /// The time of day for the calculation (HH:mm format, 24-hour). Defaults to 00:00 if not provided
+        /// The time of day for the calculation (HH:mm format, 24-hour), read in the timezone of the coordinates. Defaults to 00:00 if not provided
         /// </summary>
         [JsonProperty("time")]
         public string Time { get; set; }
+
+        /// <summary>
+        /// IANA timezone to read the date and time in, such as America/Los_Angeles. Defaults to the timezone of the coordinates
+        /// </summary>
+        [JsonProperty("timezone")]
+        public string Timezone { get; set; }
     }
 }

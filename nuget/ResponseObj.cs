@@ -38,11 +38,41 @@ namespace APIVerve.API.SunPosition
         [JsonProperty("time")]
         public string Time { get; set; }
 
+        [JsonProperty("timezone")]
+        public string Timezone { get; set; }
+
+        [JsonProperty("timestampUTC")]
+        public DateTimeOffset? TimestampUtc { get; set; }
+
         [JsonProperty("coordinates")]
         public Coordinates Coordinates { get; set; }
 
         [JsonProperty("sun")]
         public Sun Sun { get; set; }
+
+        [JsonProperty("equationOfTime")]
+        public double? EquationOfTime { get; set; }
+
+        [JsonProperty("airMass")]
+        public double? AirMass { get; set; }
+
+        [JsonProperty("clearSky")]
+        public ClearSky ClearSky { get; set; }
+
+        [JsonProperty("shadowRatio")]
+        public double? ShadowRatio { get; set; }
+
+        [JsonProperty("panelAim")]
+        public PanelAim PanelAim { get; set; }
+    }
+
+    public partial class ClearSky
+    {
+        [JsonProperty("directNormal")]
+        public double? DirectNormal { get; set; }
+
+        [JsonProperty("globalHorizontal")]
+        public double? GlobalHorizontal { get; set; }
     }
 
     public partial class Coordinates
@@ -54,6 +84,15 @@ namespace APIVerve.API.SunPosition
         public double? Longitude { get; set; }
     }
 
+    public partial class PanelAim
+    {
+        [JsonProperty("tilt")]
+        public double? Tilt { get; set; }
+
+        [JsonProperty("azimuth")]
+        public double? Azimuth { get; set; }
+    }
+
     public partial class Sun
     {
         [JsonProperty("altitude")]
@@ -61,6 +100,30 @@ namespace APIVerve.API.SunPosition
 
         [JsonProperty("azimuth")]
         public double? Azimuth { get; set; }
+
+        [JsonProperty("altitudeDegrees")]
+        public double? AltitudeDegrees { get; set; }
+
+        [JsonProperty("azimuthDegrees")]
+        public double? AzimuthDegrees { get; set; }
+
+        [JsonProperty("compassBearing")]
+        public double? CompassBearing { get; set; }
+
+        [JsonProperty("isDaylight")]
+        public bool? IsDaylight { get; set; }
+
+        [JsonProperty("declination")]
+        public double? Declination { get; set; }
+
+        [JsonProperty("rightAscension")]
+        public double? RightAscension { get; set; }
+
+        [JsonProperty("hourAngle")]
+        public double? HourAngle { get; set; }
+
+        [JsonProperty("distance")]
+        public double? Distance { get; set; }
     }
 
     public partial class Premium
