@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/sunposition",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Sun Position calculates the sun altitude and azimuth, plus compass bearing, for any geographic coordinates and time. Provide latitude and longitude to read sun elevation angles and daylight status; paid plans add panel aiming angles and shadow ratios.",
   "main": "index.js",
   "types": "index.d.ts",
