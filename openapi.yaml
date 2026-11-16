@@ -43,7 +43,9 @@ paths:
           schema:
             type: string
           required: false
-          description: The date to get the sun position data for (MM-DD-YYYY)
+          description: >-
+            The date to get the sun position data for (MM-DD-YYYY). Years 1700
+            to 2300 are supported
           example: 01-16-2026
         - name: time
           in: query
