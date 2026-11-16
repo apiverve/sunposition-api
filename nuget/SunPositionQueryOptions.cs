@@ -23,7 +23,7 @@ namespace APIVerve.API.SunPosition
         public double Lon { get; set; }
 
         /// <summary>
-        /// The date to get the sun position data for (MM-DD-YYYY)
+        /// The date to get the sun position data for (MM-DD-YYYY). Years 1700 to 2300 are supported
         /// </summary>
         [JsonProperty("date")]
         public string Date { get; set; }
